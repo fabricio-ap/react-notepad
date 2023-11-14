@@ -1,0 +1,34 @@
+{
+  "notes": [
+    {
+      "id": 0,
+      "type": "content",
+      "title": "Minha primeira anotação",
+      "content": "Está é minha primeira anotação!"
+    },
+    {
+      "id": 1,
+      "type": "content",
+      "title": "Adicionar edição",
+      "content": "Nota para lembrar que temos que adicionar a edição"
+    },
+    {
+      "id": 2,
+      "type": "content",
+      "title": "Adicionar duplicação",
+      "content": "Nota para lembrar que temos que adicionar a duplicação"
+    },
+    {
+      "id": 3,
+      "type": "content",
+      "title": "Adicionar explusão",
+      "content": "Nota para lembrar que temos que adicionar a exclusão"
+    },
+    {
+      "id": 4,
+      "type": "content",
+      "title": "Nota",
+      "content": "Está é minha primeira anotação!"
+    }
+  ]
+}
