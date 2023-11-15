@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   gap: 16px;
-  background: ${({ theme }) => theme.onBackground};
+  background: ${({ theme }) => theme.primary};
   border-radius: 8px;
 `;
 
@@ -26,7 +26,7 @@ export const Title = styled.h4`
 `;
 
 export const Text = styled.p`
-  font-size: 14px;
+  font-size: 12px;
 `;
 
 export const Footer = styled.footer`
@@ -39,9 +39,4 @@ export const Footer = styled.footer`
 
 export const FooterItem = styled.div`
   cursor: pointer;
-  color: ${({ theme }) => theme.primary};
-
-  &:hover {
-    color: ${({ theme }) => theme.onPrimary};
-  }
 `;

@@ -1,11 +1,24 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
+  position: fixed;
+  top: 0;
+  z-index: 999;
   width: 100%;
+  height: 82px;
+  padding: 0 40px;
+  box-sizing: border-box;
   display: flex;
-  gap: 8px;
+  gap: 16px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  background: ${({ theme }) => theme.background};
+`;
+
+export const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;
 
 export const Icon = styled.span`
@@ -19,4 +32,9 @@ export const Title = styled.h2`
   font-weight: 800;
   line-height: 22px;
   letter-spacing: 1px;
+`;
+
+export const Actions = styled(Logo)`
+  flex: 1;
+  justify-content: flex-end;
 `;

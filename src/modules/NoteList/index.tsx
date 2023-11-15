@@ -1,37 +1,29 @@
 import { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Card, TextInput } from '~/components';
+import { useSelector } from 'react-redux';
 import { NoteServices } from '~/services';
-import { Note } from '~/types/note';
-import { List, ListItem, Wrapper } from './styles';
+import { RootState } from '~/store';
+import { NoteType } from '~/types/note';
+import { DraggingList } from './DraggingList';
+import { Wrapper } from './styles';
 
 export function NoteList() {
-  const [search, setSearch] = useState<string>('');
+  const [open, setOpen] = useState(false);
 
-  const { data: notes, isLoading } = useQuery<Note[]>({
+  const { search } = useSelector((state: RootState) => state.filter);
+
+  const { data: notes, isLoading } = useQuery<NoteType[]>({
     queryKey: ['notes', search],
     queryFn: () => NoteServices.getNotes(search),
   });
 
   const showNotes = !isLoading && notes?.length;
 
-  const handleChange = (value: string) => setSearch(value);
-
   return (
     <Wrapper>
-      <TextInput value={search} placeholder='Pesquisar' onChange={handleChange} />
-
       {isLoading && <div>Carregando</div>}
 
-      {showNotes && (
-        <List>
-          {notes.map((note, index) => (
-            <ListItem key={index}>
-              <Card {...note} />
-            </ListItem>
-          ))}
-        </List>
-      )}
+      {showNotes ? <DraggingList itemsArr={notes} /> : <></>}
     </Wrapper>
   );
 }

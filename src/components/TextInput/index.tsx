@@ -3,16 +3,18 @@ import { Icon } from '../Icon';
 import { Input, Wrapper } from './styles';
 
 interface TextInputProps {
-  value: string;
+  value?: string;
   placeholder: string;
-  onChange: (value: string) => void;
+  fullWidth?: boolean;
+  onChange?: (value: string) => void;
 }
 
-export function TextInput({ value, placeholder, onChange }: TextInputProps) {
-  const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => onChange(target.value);
+export function TextInput({ value, placeholder, fullWidth, onChange }: TextInputProps) {
+  const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) =>
+    onChange && onChange(target.value);
 
   return (
-    <Wrapper>
+    <Wrapper $fullWidth={fullWidth}>
       <Icon name='search' />
       <Input type='text' value={value} placeholder={placeholder} onChange={handleChange} />
     </Wrapper>

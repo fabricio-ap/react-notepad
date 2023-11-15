@@ -1,10 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap');
-
   html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     font-family: 'DM Sans', sans-serif;
+    color: ${({ theme }) => theme.text};
   }
 
   ::-webkit-scrollbar {

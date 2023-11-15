@@ -1,26 +1,39 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+type WrapperType = {
+  $fullWidth?: boolean;
+};
+
+export const Wrapper = styled.div<WrapperType>`
   box-sizing: border-box;
-  width: 100%;
+  width: ${({ $fullWidth }) => ($fullWidth ? '100%' : '280px')};
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 8px;
-  padding-left: 12px;
+  gap: 16px;
+  padding-left: 16px;
   border-radius: 8px;
-  background: ${({ theme }) => theme.onBackground};
-  color: ${({ theme }) => theme.primary};
+  background: ${({ theme }) => theme.primary};
 `;
 
 export const Input = styled.input`
   box-sizing: border-box;
   width: 100%;
-  padding: 8px;
+  height: 42px;
   border: none;
   background: transparent;
+  color: ${({ theme }) => theme.text};
 
   &:focus-visible {
     outline: none;
+  }
+
+  &::placeholder {
+    color: ${({ theme }) => theme.text};
+    opacity: 0.5;
+  }
+
+  &:placeholder-shown {
+    text-overflow: ellipsis;
   }
 `;
