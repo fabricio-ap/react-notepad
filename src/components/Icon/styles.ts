@@ -5,7 +5,7 @@ type Icon = {
   $hasClick: boolean;
 };
 
-export const Wrapper = styled.span<Icon>`
+export const Wrapper = styled.div<Icon>`
   width: ${({ $size }) => $size};
   height: fit-content;
   display: flex;

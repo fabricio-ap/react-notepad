@@ -1,1 +1,1 @@
-export * from './NoteList';
+export * from './Notes';

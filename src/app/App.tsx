@@ -1,40 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { IconContext } from 'react-icons';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { Header, Layout } from '~/components';
-import { NoteList } from '~/modules';
+import { Notes } from '~/modules';
 import { store } from '~/store';
-import { ResetStyles, theme } from '~/theme';
-import { GlobalStyle } from '~/theme/global';
+import { GlobalStyle, ResetStyles, theme } from '~/theme';
+import { ThemeEnum, ThemeType } from '~/types/theme';
 
-enum Theme {
-  light = 'light',
-  dark = 'dark',
-}
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
-type ThemeType = Theme.light | Theme.dark;
-
-const queryClient = new QueryClient();
+const initialTheme = (window.localStorage.getItem('theme') as ThemeType) || ThemeEnum.light;
 
 function App() {
-  const [activeTheme, setActiveTheme] = useState<ThemeType>(Theme.light);
+  const [activeTheme, setActiveTheme] = useState<ThemeType>(initialTheme);
 
-  console.log({ activeTheme });
-
-  useEffect(() => {
-    const storage = window.localStorage.getItem('theme') as ThemeType;
-    storage && setActiveTheme(storage);
-  }, []);
-
-  const setMode = (mode: Theme.light | Theme.dark) => {
-    window.localStorage.setItem('theme', mode);
-    setActiveTheme(mode);
+  const handleToggleTheme = () => {
+    activeTheme === 'light' ? setMode(ThemeEnum.dark) : setMode(ThemeEnum.light);
   };
 
-  const toggleTheme = () => {
-    activeTheme === 'light' ? setMode(Theme.dark) : setMode(Theme.light);
+  const setMode = (mode: ThemeType) => {
+    window.localStorage.setItem('theme', mode);
+    setActiveTheme(mode);
   };
 
   return (
@@ -45,10 +39,10 @@ function App() {
             <ResetStyles />
             <GlobalStyle />
 
-            <Header onToggleTheme={toggleTheme} />
+            <Header onToggleTheme={handleToggleTheme} />
 
             <Layout>
-              <NoteList />
+              <Notes />
             </Layout>
           </Provider>
         </IconContext.Provider>

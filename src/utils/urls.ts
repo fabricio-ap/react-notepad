@@ -1,1 +1,1 @@
-export const GET_NOTES_URL = '/notes';
+export const NOTES_URL = '/notes';

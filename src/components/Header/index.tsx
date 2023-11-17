@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setSearch } from '~/reducer/filter';
 import { RootState } from '~/store';
 import { Icon } from '../Icon';
-import { TextInput } from '../TextInput';
+import { Input } from '../Input';
 import { Actions, Logo, Title, Wrapper } from './styles';
 
 interface HeaderProps {
@@ -18,14 +18,17 @@ export function Header({ onToggleTheme }: HeaderProps) {
   return (
     <Wrapper>
       <Logo>
-        <Icon name='logo' size='22px' />
+        <Icon name='logo' size='20px' />
         <Title>Notepad</Title>
       </Logo>
 
-      <TextInput value={search} placeholder='Pesquisar' onChange={handleChange} />
+      <Input.Root>
+        <Icon name='search' size='20px' />
+        <Input.TextInput value={search} placeholder='Pesquisar' onChange={handleChange} />
+      </Input.Root>
 
       <Actions>
-        <Icon name='themeMode' size='22px' onClick={onToggleTheme} />
+        <Icon name='themeMode' size='20px' onClick={onToggleTheme} />
       </Actions>
     </Wrapper>
   );

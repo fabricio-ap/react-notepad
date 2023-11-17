@@ -27,9 +27,11 @@ export function DraggingList({ itemsArr = [] }: DraggingList) {
   }, [itemsArr]);
 
   const sensors = useSensors(
-    useSensor(MouseSensor),
+    useSensor(MouseSensor, {
+      activationConstraint: { delay: 100, tolerance: 1 },
+    }),
     useSensor(TouchSensor, {
-      activationConstraint: { delay: 250, tolerance: 1 },
+      activationConstraint: { delay: 100, tolerance: 1 },
     }),
   );
 

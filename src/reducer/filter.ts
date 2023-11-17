@@ -11,9 +11,9 @@ const initialState: FilterState = {
 export const filterSlice = createSlice({
   name: 'filter',
   initialState,
+
   reducers: {
     setSearch: (state, action: PayloadAction<string>) => {
-      console.log({ state, action });
       state.search = action.payload;
     },
   },

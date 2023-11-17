@@ -1,3 +1,2 @@
-import NoteServices from './NoteServices';
-
-export { NoteServices };
+export * from './api';
+export * from './note';

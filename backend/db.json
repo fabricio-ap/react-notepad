@@ -4,91 +4,85 @@
       "id": 1,
       "type": "simple",
       "title": "Minha primeira anotação",
-      "content": "Está é minha primeira anotação!"
+      "content": "Está é minha primeira anotação!",
+      "background": "#F6F7FB"
     },
     {
       "id": 2,
       "type": "simple",
-      "title": "Adicionar edição",
-      "content": "Nota para lembrar que temos que adicionar a edição"
+      "title": "testando edicao",
+      "content": "Nota para lembrar que temos que adicionar a edição",
+      "background": "#F6F7FB"
     },
     {
       "id": 3,
       "type": "simple",
       "title": "Adicionar duplicação",
-      "content": "Nota para lembrar que temos que adicionar a duplicação"
-    },
-    {
-      "id": 4,
-      "type": "simple",
-      "title": "Adicionar explusão",
-      "content": "Nota para lembrar que temos que adicionar a exclusão"
+      "content": "Nota para lembrar que temos que adicionar a duplicação",
+      "background": "#F6F7FB"
     },
     {
       "id": 5,
       "type": "simple",
       "title": "Nota",
-      "content": "Está é minha primeira anotação!"
+      "content": "Está é minha primeira anotação!",
+      "background": "#F6F7FB"
     },
     {
       "id": 6,
       "type": "simple",
       "title": "Minha primeira anotação",
-      "content": "Está é minha primeira anotação!"
+      "content": "Está é minha primeira anotação!",
+      "background": "#F6F7FB"
     },
     {
       "id": 7,
       "type": "simple",
       "title": "Adicionar edição",
-      "content": "Nota para lembrar que temos que adicionar a edição"
+      "content": "Nota para lembrar que temos que adicionar a edição",
+      "background": "#F6F7FB"
     },
     {
       "id": 8,
       "type": "simple",
       "title": "Adicionar duplicação",
-      "content": "Nota para lembrar que temos que adicionar a duplicação"
-    },
-    {
-      "id": 9,
-      "type": "simple",
-      "title": "Adicionar explusão",
-      "content": "Nota para lembrar que temos que adicionar a exclusão"
+      "content": "Nota para lembrar que temos que adicionar a duplicação",
+      "background": "#F6F7FB"
     },
     {
       "id": 10,
       "type": "simple",
-      "title": "Nota",
-      "content": "Está é minha primeira anotação!"
+      "title": "Nota editada",
+      "content": "esta nota foi editada\n:)",
+      "background": "#F6F7FB"
     },
     {
       "id": 11,
       "type": "simple",
       "title": "Minha primeira anotação",
-      "content": "Está é minha primeira anotação!"
+      "content": "Está é minha primeira anotação!",
+      "background": "#F6F7FB"
     },
     {
       "id": 12,
       "type": "simple",
       "title": "Adicionar edição",
-      "content": "Nota para lembrar que temos que adicionar a edição"
+      "content": "Nota para lembrar que temos que adicionar a edição",
+      "background": "#F6F7FB"
     },
     {
       "id": 13,
       "type": "simple",
       "title": "Adicionar duplicação",
-      "content": "Nota para lembrar que temos que adicionar a duplicação"
-    },
-    {
-      "id": 14,
-      "type": "simple",
-      "title": "Adicionar explusão",
-      "content": "Nota para lembrar que temos que adicionar a exclusão"
+      "content": "Nota para lembrar que temos que adicionar a duplicação",
+      "background": "#F6F7FB"
     },
     {
       "id": 15,
       "type": "simple",
       "title": "Nota",
-      "content": "Está é minha primeira anotação!"
+      "content": "Está é minha primeira anotação!",
+      "background": "#F6F7FB"
     }
   ]
 }
