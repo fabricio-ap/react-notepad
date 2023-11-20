@@ -26,12 +26,14 @@ export const Header = styled.header`
 `;
 
 export const Title = styled.h4`
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 `;
 
 export const Text = styled.p`
+  white-space: pre-wrap;
   font-size: 12px;
+  line-height: 20px;
 `;
 
 export const Footer = styled.footer`

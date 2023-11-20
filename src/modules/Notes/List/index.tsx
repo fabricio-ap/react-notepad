@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { NotesService } from '~/services';
 import { RootState } from '~/store';
 import { DraggingList } from './DraggingList';
-import { Wrapper } from './styles';
+import { Content, Wrapper } from './styles';
 
 export function List() {
   const { search } = useSelector((state: RootState) => state.filter);
@@ -12,11 +12,19 @@ export function List() {
 
   const showNotes = !isLoading && notes?.length;
 
+  const fixedNotes = notes?.filter(({ fixed }) => fixed) || [];
+  const nonFixedNotes = notes?.filter(({ fixed }) => !fixed) || [];
+
   return (
     <Wrapper>
-      {isLoading && <div>Carregando</div>}
-
-      {showNotes ? <DraggingList itemsArr={notes} /> : <></>}
+      {showNotes ? (
+        <Content>
+          {fixedNotes.length ? <DraggingList title='Marcadas' itemsArr={fixedNotes} /> : <></>}
+          <DraggingList title='Outras' itemsArr={nonFixedNotes} />
+        </Content>
+      ) : (
+        <></>
+      )}
     </Wrapper>
   );
 }

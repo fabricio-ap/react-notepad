@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   html, body {
     width: 100%;
-    height: 100%;
+    height: auto;
     font-family: 'DM Sans', sans-serif;
     background: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.text};
@@ -45,11 +45,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'DM Sans', sans-serif;
   }
 
-  input[type="text"] {
-    font-family: 'DM Sans', sans-serif;
-  }
-  
-  textarea {
+  * {
     font-family: 'DM Sans', sans-serif;
   }
 `;

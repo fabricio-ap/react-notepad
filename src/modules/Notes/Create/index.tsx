@@ -1,32 +1,50 @@
-import { useEffect, useRef, useState } from 'react';
-import { Input } from '~/components';
-import { Group } from './Group';
+import { useState } from 'react';
+import { Input, NoteForm } from '~/components';
+import { useComponentVisible } from '~/hooks/useComponentVisible';
+import { NotesService } from '~/services';
 import { Container, Wrapper } from './styles';
 
 export function Create() {
-  const ref = useRef<HTMLInputElement>(null);
+  const [title, setTitle] = useState<string>('');
+  const [content, setContent] = useState<string>('');
 
-  const [showAll, setShowAll] = useState<boolean>(false);
+  const Notes = NotesService.getInstance();
+  const { mutate } = Notes.add();
 
-  useEffect(() => {
-    document.addEventListener('click', showContent);
+  const handleChangeTitle = (value: string) => setTitle(value);
+  const handleChangeContent = (value: string) => setContent(value);
 
-    return () => {
-      document.removeEventListener('click', showContent);
-    };
-  });
-
-  const showContent = ({ target }: Event) => {
-    if (ref.current && ref.current.contains(target as HTMLElement)) return setShowAll(true);
-    setShowAll(false);
+  const handleAddNote = async () => {
+    setShow(false);
+    if (!title && !content) return;
+    mutate({ id: Math.random().toString(16).slice(2), title, content });
+    resetState();
   };
+
+  const resetState = () => {
+    setTitle('');
+    setContent('');
+  };
+
+  const { ref, show, setShow } = useComponentVisible<HTMLDivElement>(handleAddNote);
 
   return (
     <Wrapper>
       <Container ref={ref}>
-        {!showAll && <Input placeholder='Criar uma nota...' fullWidth />}
+        {!show && <Input placeholder='Criar uma nota...' fullWidth />}
 
-        {showAll && <Group changeView={setShowAll} />}
+        {show && (
+          <NoteForm onClose={handleAddNote}>
+            <Input placeholder='Título' value={title} onChange={handleChangeTitle} fullWidth />
+            <Input
+              type='textarea'
+              placeholder='Criar uma nota...'
+              value={content}
+              onChange={handleChangeContent}
+              fullWidth
+            />
+          </NoteForm>
+        )}
       </Container>
     </Wrapper>
   );

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.header`
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 1;
   width: 100%;
   height: 82px;
   padding: 0 40px;

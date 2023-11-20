@@ -12,13 +12,14 @@ import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortab
 import { useCallback, useEffect, useState } from 'react';
 import { NoteType } from '~/types/note';
 import { SortableItem } from '../SortableItem';
-import { List } from './styles';
+import { List, Title, Wrapper } from './styles';
 
 interface DraggingList {
+  title?: string;
   itemsArr: NoteType[];
 }
 
-export function DraggingList({ itemsArr = [] }: DraggingList) {
+export function DraggingList({ title, itemsArr = [] }: DraggingList) {
   const [items, setItems] = useState(itemsArr);
   const [activeId, setActiveId] = useState<string | null>(null);
 
@@ -58,20 +59,24 @@ export function DraggingList({ itemsArr = [] }: DraggingList) {
   }, []);
 
   return (
-    <DndContext
-      sensors={sensors}
-      collisionDetection={closestCenter}
-      onDragStart={handleDragStart}
-      onDragEnd={handleDragEnd}
-      onDragCancel={handleDragCancel}
-    >
-      <SortableContext items={items} strategy={rectSortingStrategy}>
-        <List>
-          {items.map((item) => (
-            <SortableItem key={item.id} item={item} />
-          ))}
-        </List>
-      </SortableContext>
-    </DndContext>
+    <Wrapper>
+      <Title>{title}</Title>
+
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
+        onDragCancel={handleDragCancel}
+      >
+        <SortableContext items={items} strategy={rectSortingStrategy}>
+          <List>
+            {items.map((item) => (
+              <SortableItem key={item.id} item={item} />
+            ))}
+          </List>
+        </SortableContext>
+      </DndContext>
+    </Wrapper>
   );
 }
