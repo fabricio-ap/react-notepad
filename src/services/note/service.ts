@@ -15,7 +15,8 @@ export const addNote = async (params: NoteType) => {
 };
 
 export const updateNote = async (params: NoteType) => {
-  const { data } = await api.put(`${NOTES_URL}/${params.id}`, params);
+  const { id, ...body } = params;
+  const { data } = await api.put(`${NOTES_URL}/${id}`, body);
   return data;
 };
 

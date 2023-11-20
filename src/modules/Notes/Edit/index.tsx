@@ -2,7 +2,7 @@ import { Modal } from 'antd';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from 'styled-components';
-import { Input } from '~/components';
+import { Input, NoteForm } from '~/components';
 import { resetNote } from '~/reducer/note';
 import { NotesService } from '~/services';
 import { RootState } from '~/store';
@@ -42,16 +42,16 @@ export function Edit() {
       styles={{ content: { background: theme.primary, padding: 0 } }}
     >
       <Wrapper>
-        <Input.Root fullWidth>
-          <Input.TextInput value={title} placeholder='Título' onChange={handleChangeTitle} />
-        </Input.Root>
-        <Input.Root fullWidth>
-          <Input.TextArea
-            value={content}
+        <NoteForm onClose={handleCancel}>
+          <Input placeholder='Título' value={title} onChange={handleChangeTitle} fullWidth />
+          <Input
+            type='textarea'
             placeholder='Criar uma nota...'
+            value={content}
             onChange={handleChangeContent}
+            fullWidth
           />
-        </Input.Root>
+        </NoteForm>
       </Wrapper>
     </Modal>
   );

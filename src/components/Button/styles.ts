@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledButton = styled.button`
   cursor: pointer;
   padding: 8px 8px;
-  border: 0.5px solid ${({ theme }) => theme.onPrimary};
+  border: none;
   background: ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.text};
   border-radius: 8px;

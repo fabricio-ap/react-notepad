@@ -4,7 +4,7 @@ import { addNote, deleteNote, getNotes, updateNote } from './service';
 
 export class NotesService {
   private static instance: NotesService;
-  public getRefetch: () => void = () => undefined;
+  private refetch: () => void = () => undefined;
 
   private constructor() {}
 
@@ -22,7 +22,7 @@ export class NotesService {
       queryFn: () => getNotes(search),
     });
 
-    this.getRefetch = refetch;
+    this.refetch = refetch;
 
     return { ...query, refetch };
   }
@@ -46,6 +46,6 @@ export class NotesService {
   }
 
   private refetchNotes() {
-    this.getRefetch();
+    this.refetch();
   }
 }

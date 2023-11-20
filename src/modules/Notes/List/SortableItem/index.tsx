@@ -12,10 +12,6 @@ interface SortableItemProps {
 }
 
 export function SortableItem({ item }: SortableItemProps) {
-  const { isDragging, attributes, listeners, setNodeRef, transform, transition } = useSortable({
-    id: item.id,
-  });
-
   const dispatch = useDispatch();
 
   const Notes = NotesService.getInstance();
@@ -23,7 +19,9 @@ export function SortableItem({ item }: SortableItemProps) {
 
   const handleSelect = () => dispatch(setNote(item));
 
-  const handleDelete = () => mutate(item.id);
+  const { isDragging, attributes, listeners, setNodeRef, transform, transition } = useSortable({
+    id: item.id,
+  });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -37,10 +35,8 @@ export function SortableItem({ item }: SortableItemProps) {
       $isDragging={isDragging}
       {...attributes}
       {...listeners}
-      onClick={handleSelect}
     >
-      <Note.Root>
-        {/* <Note.Actions onDelete={handleDelete} /> */}
+      <Note.Root onClick={handleSelect}>
         <Note.Title title={item.title} />
         <Note.Simple content={item.content} />
       </Note.Root>

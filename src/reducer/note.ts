@@ -21,8 +21,10 @@ export const noteSlice = createSlice({
 
   reducers: {
     setNote: (state, action: PayloadAction<NoteType>) => {
-      state.isOpenEdit = true;
-      state.note = { ...action.payload };
+      if (action.payload.id) {
+        state.isOpenEdit = true;
+        state.note = { ...action.payload };
+      }
     },
     resetNote: (state, action: PayloadAction) => {
       state.isOpenEdit = initialState.isOpenEdit;

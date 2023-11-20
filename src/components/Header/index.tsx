@@ -22,10 +22,7 @@ export function Header({ onToggleTheme }: HeaderProps) {
         <Title>Notepad</Title>
       </Logo>
 
-      <Input.Root>
-        <Icon name='search' size='20px' />
-        <Input.TextInput value={search} placeholder='Pesquisar' onChange={handleChange} />
-      </Input.Root>
+      <Input value={search} placeholder='Pesquisar' icon='search' onChange={handleChange} />
 
       <Actions>
         <Icon name='themeMode' size='20px' onClick={onToggleTheme} />

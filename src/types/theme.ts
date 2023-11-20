@@ -24,11 +24,11 @@ export enum LightToken {
 
 export enum DarkToken {
   primary = '#474F5C',
-  onPrimary = '#E6F6F5',
+  onPrimary = '#5f6368',
   secondary = '#9EA4B4',
   background = '#2A2F36',
   text = '#F6F7FB',
-  hover = '#E6F6F5',
+  hover = '#6A768A',
   shadow = '#202124',
 }
 

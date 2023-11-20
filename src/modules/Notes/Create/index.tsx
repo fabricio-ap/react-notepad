@@ -24,13 +24,9 @@ export function Create() {
   return (
     <Wrapper>
       <Container ref={ref}>
-        {!showAll && (
-          <Input.Root fullWidth>
-            <Input.TextInput placeholder='Criar uma nota...' />
-          </Input.Root>
-        )}
+        {!showAll && <Input placeholder='Criar uma nota...' fullWidth />}
 
-        {showAll && <Group />}
+        {showAll && <Group changeView={setShowAll} />}
       </Container>
     </Wrapper>
   );

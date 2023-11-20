@@ -1,19 +1,34 @@
-import { Icon } from '../Icon';
+import { ReactNode } from 'react';
 import { Footer, FooterItem } from './styles';
 
 interface NoteActionsProps {
-  onDelete?: () => void;
+  config: {
+    render: () => ReactNode;
+    align?: 'right' | 'left';
+    onClick?: () => void;
+  }[];
 }
 
-export function NoteActions({ onDelete }: NoteActionsProps) {
+export function NoteActions({ config }: NoteActionsProps) {
+  const leftAction = config.filter(({ align }) => align === 'left');
+  const rightAction = config.filter(({ align }) => align === 'right');
+
   return (
     <Footer>
-      <FooterItem>
-        <Icon name='edit' />
-      </FooterItem>
-      <FooterItem>
-        <Icon name='remove' onClick={onDelete} />
-      </FooterItem>
+      <div>
+        {leftAction.map(({ render, onClick }, index) => (
+          <FooterItem key={index} onClick={onClick}>
+            {render()}
+          </FooterItem>
+        ))}
+      </div>
+      <div>
+        {rightAction.map(({ render, onClick }, index) => (
+          <FooterItem key={index} onClick={onClick}>
+            {render()}
+          </FooterItem>
+        ))}
+      </div>
     </Footer>
   );
 }

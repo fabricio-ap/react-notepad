@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  padding: 8px 0;
 `;
 
 export const Actions = styled.div`

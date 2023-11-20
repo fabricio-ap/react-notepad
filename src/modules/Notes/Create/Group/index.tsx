@@ -1,9 +1,13 @@
 import { useState } from 'react';
-import { Button, Input } from '~/components';
+import { Input, NoteForm } from '~/components';
 import { NotesService } from '~/services';
-import { Actions, Wrapper } from './styles';
+import { Wrapper } from './styles';
 
-export function Group() {
+interface GroupProps {
+  changeView: (view: boolean) => void;
+}
+
+export function Group({ changeView }: GroupProps) {
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
 
@@ -14,26 +18,23 @@ export function Group() {
   const handleChangeContent = (value: string) => setContent(value);
 
   const addNote = async () => {
+    changeView(false);
     if (!content) return;
     mutate({ id: Math.random().toString(16).slice(2), title, content });
   };
 
   return (
     <Wrapper>
-      <Input.Root fullWidth>
-        <Input.TextInput placeholder='Título' value={title} onChange={handleChangeTitle} />
-      </Input.Root>
-      <Input.Root fullWidth>
-        <Input.TextArea
+      <NoteForm onClose={addNote}>
+        <Input placeholder='Título' value={title} onChange={handleChangeTitle} fullWidth />
+        <Input
+          type='textarea'
           placeholder='Criar uma nota...'
           value={content}
           onChange={handleChangeContent}
+          fullWidth
         />
-      </Input.Root>
-
-      <Actions>
-        <Button label='Salvar' onClick={addNote} />
-      </Actions>
+      </NoteForm>
     </Wrapper>
   );
 }
