@@ -2,9 +2,9 @@ import { IconContext } from 'react-icons';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
-import { Header, Layout } from '~/components';
+import { Layout } from '~/components';
 import { useActiveTheme } from '~/hooks/useActiveTheme';
-import { Create, Filter, Notes } from '~/modules';
+import { Create, Filter, Header, Notes } from '~/modules';
 import { store } from '~/store';
 import { GlobalStyle, ResetStyles, theme } from '~/theme';
 

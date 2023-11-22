@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   padding: 8px 0;
 `;
 
-export const Actions = styled(Wrapper)`
+export const Actions = styled.div`
   width: 100%;
   height: auto;
   display: flex;

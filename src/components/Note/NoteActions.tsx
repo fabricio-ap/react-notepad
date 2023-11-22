@@ -17,7 +17,7 @@ export function NoteActions({ config }: NoteActionsProps) {
   const rightAction = config.filter(({ align }) => align === 'right');
 
   return (
-    <Footer>
+    <Footer data-testid='note-actions'>
       <div>
         {leftAction.map(({ label, render, onClick }, index) => (
           <FooterItem key={index} onClick={onClick}>

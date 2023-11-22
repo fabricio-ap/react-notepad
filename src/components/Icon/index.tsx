@@ -25,7 +25,7 @@ export const config = {
 
 export function Icon({ name, size = '16px', onClick }: IconProps) {
   return (
-    <Wrapper $size={size} onClick={onClick} $hasClick={!!onClick}>
+    <Wrapper $size={size} onClick={onClick} $hasClick={!!onClick} data-testid='icon'>
       {config[name]}
     </Wrapper>
   );

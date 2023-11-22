@@ -4,15 +4,15 @@ import { Content, Wrapper } from './styles';
 
 interface NoteRootProps {
   children: ReactNode;
-  actions: NoteActionType[];
-  onClick: () => void;
+  actions?: NoteActionType[];
+  onClick?: () => void;
 }
 
 export function NoteRoot({ children, actions, onClick }: NoteRootProps) {
   return (
     <Wrapper>
       <Content onClick={onClick}>{children}</Content>
-      <NoteActions config={actions} />
+      {actions?.length && <NoteActions config={actions} />}
     </Wrapper>
   );
 }

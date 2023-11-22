@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Icon, Input } from '~/components';
 import { setSearch } from '~/reducer/filter';
 import { RootState } from '~/store';
-import { Icon } from '../Icon';
-import { Input } from '../Input';
 import { Actions, Logo, Title, Wrapper } from './styles';
 
 interface HeaderProps {

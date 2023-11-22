@@ -20,7 +20,7 @@ export function Input({ type = 'text', icon, fullWidth, ...props }: InputProps) 
     type === 'textarea' ? <TextArea {...props} /> : <TextInput {...props} />;
 
   return (
-    <Wrapper $fullWidth={fullWidth}>
+    <Wrapper $fullWidth={fullWidth} data-testid='input'>
       {icon && <Icon name={icon} />}
       {renderElement()}
     </Wrapper>
