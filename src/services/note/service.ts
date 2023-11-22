@@ -1,9 +1,9 @@
-import { NoteType } from '~/types/note';
+import { NoteType, TagType } from '~/types/note';
 import { NOTES_URL } from '~/utils/urls';
 import { api } from '../api';
 
-export const getNotes = async (q: string) => {
-  const params = { q };
+export const getNotes = async (q: string, tag: TagType | null) => {
+  const params = { q, 'tag.value': tag?.value };
   const { data } = await api.get(NOTES_URL, { params });
 
   return data;

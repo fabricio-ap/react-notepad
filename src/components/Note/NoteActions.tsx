@@ -1,12 +1,15 @@
 import { ReactNode } from 'react';
 import { Footer, FooterItem } from './styles';
 
+export type NoteActionType = {
+  label: string;
+  render?: ReactNode;
+  align?: 'right' | 'left';
+  onClick?: () => void;
+};
+
 interface NoteActionsProps {
-  config: {
-    render: () => ReactNode;
-    align?: 'right' | 'left';
-    onClick?: () => void;
-  }[];
+  config: NoteActionType[];
 }
 
 export function NoteActions({ config }: NoteActionsProps) {
@@ -16,16 +19,16 @@ export function NoteActions({ config }: NoteActionsProps) {
   return (
     <Footer>
       <div>
-        {leftAction.map(({ render, onClick }, index) => (
+        {leftAction.map(({ label, render, onClick }, index) => (
           <FooterItem key={index} onClick={onClick}>
-            {render()}
+            {render || label}
           </FooterItem>
         ))}
       </div>
       <div>
-        {rightAction.map(({ render, onClick }, index) => (
+        {rightAction.map(({ label, render, onClick }, index) => (
           <FooterItem key={index} onClick={onClick}>
-            {render()}
+            {render || label}
           </FooterItem>
         ))}
       </div>

@@ -1,13 +1,12 @@
-import { useState } from 'react';
 import { IconContext } from 'react-icons';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { Header, Layout } from '~/components';
-import { Notes } from '~/modules';
+import { useActiveTheme } from '~/hooks/useActiveTheme';
+import { Create, Filter, Notes } from '~/modules';
 import { store } from '~/store';
 import { GlobalStyle, ResetStyles, theme } from '~/theme';
-import { ThemeEnum, ThemeType } from '~/types/theme';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,19 +16,8 @@ const queryClient = new QueryClient({
   },
 });
 
-const initialTheme = (window.localStorage.getItem('theme') as ThemeType) || ThemeEnum.light;
-
 function App() {
-  const [activeTheme, setActiveTheme] = useState<ThemeType>(initialTheme);
-
-  const handleToggleTheme = () => {
-    activeTheme === 'light' ? setMode(ThemeEnum.dark) : setMode(ThemeEnum.light);
-  };
-
-  const setMode = (mode: ThemeType) => {
-    window.localStorage.setItem('theme', mode);
-    setActiveTheme(mode);
-  };
+  const { activeTheme, handleToggleTheme } = useActiveTheme();
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -42,6 +30,8 @@ function App() {
             <Header onToggleTheme={handleToggleTheme} />
 
             <Layout>
+              <Filter />
+              <Create />
               <Notes />
             </Layout>
           </Provider>

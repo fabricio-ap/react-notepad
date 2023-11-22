@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 
   ::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
   }
 
   /* Track */

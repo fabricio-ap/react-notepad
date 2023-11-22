@@ -1,20 +1,10 @@
 import { ReactNode } from 'react';
-import { NoteActions } from './NoteActions';
+import { NoteActionType, NoteActions } from './NoteActions';
 import { Content, Wrapper } from './styles';
-
-export type NoteActionType = {
-  render: () => ReactNode;
-  align?: 'right' | 'left';
-  onClick?: () => void;
-};
 
 interface NoteRootProps {
   children: ReactNode;
-  actions: {
-    render: () => ReactNode;
-    align?: 'right' | 'left';
-    onClick?: () => void;
-  }[];
+  actions: NoteActionType[];
   onClick: () => void;
 }
 

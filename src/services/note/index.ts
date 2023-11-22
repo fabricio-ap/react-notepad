@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from 'react-query';
-import { NoteType } from '~/types/note';
+import { NoteType, TagType } from '~/types/note';
 import { addNote, deleteNote, getNotes, updateNote } from './service';
 
 export class NotesService {
@@ -16,10 +16,10 @@ export class NotesService {
     return NotesService.instance;
   }
 
-  public get(search: string) {
+  public get(search: string, tag: TagType | null) {
     const { refetch, ...query } = useQuery<NoteType[]>({
-      queryKey: ['users', search],
-      queryFn: () => getNotes(search),
+      queryKey: ['users', search, tag],
+      queryFn: () => getNotes(search, tag),
     });
 
     this.refetch = refetch;

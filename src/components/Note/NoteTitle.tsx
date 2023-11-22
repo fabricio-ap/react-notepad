@@ -6,10 +6,8 @@ interface NoteTitleProps {
 
 export function NoteTitle({ title }: NoteTitleProps) {
   return (
-    title && (
-      <Header>
-        <Title>{title}</Title>
-      </Header>
-    )
+    <Header>
+      <Title>{title}</Title>
+    </Header>
   );
 }

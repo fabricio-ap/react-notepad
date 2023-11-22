@@ -43,7 +43,13 @@ export function Edit() {
     >
       <Wrapper>
         <NoteForm onClose={handleCancel}>
-          <Input placeholder='Título' value={title} onChange={handleChangeTitle} fullWidth />
+          <Input
+            type='text'
+            placeholder='Título'
+            value={title}
+            onChange={handleChangeTitle}
+            fullWidth
+          />
           <Input
             type='textarea'
             placeholder='Criar uma nota...'

@@ -31,9 +31,38 @@ export const Title = styled.h4`
 `;
 
 export const Text = styled.p`
-  white-space: pre-wrap;
+  width: 100%;
+  max-height: 320px;
   font-size: 12px;
   line-height: 20px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+`;
+
+export const TagWrapper = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
+
+export const Tag = styled.label`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid ${({ theme }) => theme.onPrimary};
+
+  &:hover {
+    background: ${({ theme }) => theme.hover};
+  }
 `;
 
 export const Footer = styled.footer`

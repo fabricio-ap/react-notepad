@@ -2,7 +2,7 @@ import { FaEdit } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 import { LuPalette } from 'react-icons/lu';
 import { MdOutlinePushPin } from 'react-icons/md';
-import { PiNotepad } from 'react-icons/pi';
+import { PiNotepad, PiTagSimpleBold } from 'react-icons/pi';
 import { TbSunMoon, TbTrash } from 'react-icons/tb';
 import { Wrapper } from './styles';
 
@@ -20,6 +20,7 @@ export const config = {
   themeMode: <TbSunMoon size='100%' />,
   palette: <LuPalette size='100%' />,
   pin: <MdOutlinePushPin size='100%' />,
+  tag: <PiTagSimpleBold size='100%' />,
 };
 
 export function Icon({ name, size = '16px', onClick }: IconProps) {

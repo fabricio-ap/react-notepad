@@ -17,7 +17,7 @@ export const Wrapper = styled.div<WrapperType>`
   background: ${({ theme }) => theme.primary};
 `;
 
-export const TextInput = styled.input`
+export const Input = styled.input`
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -40,15 +40,15 @@ export const TextInput = styled.input`
   }
 `;
 
-export const AreaInput = styled.textarea`
+export const Area = styled.textarea`
   box-sizing: border-box;
   width: 100%;
-  max-height: 320px;
+  height: 200px;
   padding: 8px 0;
+  resize: none;
   border: none;
   background: transparent;
   color: ${({ theme }) => theme.text};
-  resize: none;
 
   &:focus-visible {
     outline: none;

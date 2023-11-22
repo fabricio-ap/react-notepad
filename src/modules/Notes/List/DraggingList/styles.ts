@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h3`
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   font-weight: 600;
 `;

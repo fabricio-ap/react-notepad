@@ -5,10 +5,10 @@ import { DraggingList } from './DraggingList';
 import { Content, Wrapper } from './styles';
 
 export function List() {
-  const { search } = useSelector((state: RootState) => state.filter);
+  const { search, tag } = useSelector((state: RootState) => state.filter);
 
   const Notes = NotesService.getInstance();
-  const { data: notes, isLoading } = Notes.get(search);
+  const { data: notes, isLoading } = Notes.get(search, tag);
 
   const showNotes = !isLoading && notes?.length;
 

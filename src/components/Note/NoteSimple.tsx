@@ -5,5 +5,7 @@ interface NoteSimpleProps {
 }
 
 export function NoteSimple({ content }: NoteSimpleProps) {
-  return <Text>{content}</Text>;
+  const text = content.replaceAll('<br />', '\n');
+
+  return <Text>{text}</Text>;
 }

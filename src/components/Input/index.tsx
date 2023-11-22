@@ -1,29 +1,23 @@
-import { ChangeEvent } from 'react';
 import { Icon, config } from '../Icon';
-import { AreaInput, TextInput, Wrapper } from './styles';
+import { TextArea } from './TextArea';
+import { TextInput } from './TextInput';
+import { Wrapper } from './styles';
 
-type InputType = {
+export type InputType = {
   value?: string;
   placeholder?: string;
-  fullWidth?: boolean;
   onChange?: (value: string) => void;
 };
 
 interface InputProps extends InputType {
   type?: 'text' | 'textarea';
   icon?: keyof typeof config;
+  fullWidth?: boolean;
 }
 
-export function Input({ type = 'text', icon, fullWidth, onChange, ...props }: InputProps) {
-  const handleChange = ({ target }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    onChange && onChange(target.value);
-
+export function Input({ type = 'text', icon, fullWidth, ...props }: InputProps) {
   const renderElement = () =>
-    type === 'textarea' ? (
-      <AreaInput {...props} onChange={handleChange} />
-    ) : (
-      <TextInput {...props} onChange={handleChange} />
-    );
+    type === 'textarea' ? <TextArea {...props} /> : <TextInput {...props} />;
 
   return (
     <Wrapper $fullWidth={fullWidth}>

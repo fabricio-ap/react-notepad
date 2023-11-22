@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   width: 100%;
   height: auto;
-  padding-bottom: 32px;
+  grid-area: create;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  height: auto;
+  height: 100%;
   background: ${({ theme }) => theme.primary};
   border-radius: 8px;
   box-sizing: border-box;

@@ -1,21 +1,37 @@
 {
   "notes": [
     {
+      "title": "Suco de Limão",
+      "content": "Ingredientes\n- 2 limões\n- 2 dedos de leite\n- 1 colher de sopa e 1/2 de açúcar\n- 1 litro de água gelada\n\nModo de Preparo\nDescascar os limões e tirar as sementes. Colocar no liquidificador junto com os outros ingredientes. Bater e em seguida coar. É uma delícia.",
+      "tag": {
+        "label": "Receitas",
+        "value": "receitas"
+      },
+      "fixed": false,
+      "id": "e188cbc3baf8a"
+    },
+    {
       "title": "Minha primeira anotação",
-      "content": "Está é minha primeira anotação!",
-      "id": "asjigoa12894"
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "tag": null,
+      "id": "f6654e199172a"
     },
     {
-      "title": "Nota fixa",
-      "content": "nota fixa editada",
+      "title": "Nota para testar a adição de tags",
+      "content": "Testar adicionar marcadores existentes",
+      "tag": null,
       "fixed": true,
-      "id": "d551e203fa6b9"
+      "id": "8eb50a1b56b8e"
+    }
+  ],
+  "tags": [
+    {
+      "label": "Receitas",
+      "value": "receitas"
     },
     {
-      "title": "Minha segunda anotação",
-      "content": "teste de anotação",
-      "fixed": true,
-      "id": "4b7e70fa84b6e"
+      "label": "Importante",
+      "value": "importante"
     }
   ]
 }

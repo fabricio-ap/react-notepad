@@ -12,12 +12,14 @@ export function Create() {
   const { mutate } = Notes.add();
 
   const handleChangeTitle = (value: string) => setTitle(value);
-  const handleChangeContent = (value: string) => setContent(value);
+  const handleChangeContent = (value: string) => {
+    setContent(value);
+  };
 
   const handleAddNote = async () => {
     setShow(false);
     if (!title && !content) return;
-    mutate({ id: Math.random().toString(16).slice(2), title, content });
+    mutate({ id: Math.random().toString(16).slice(2), title, content, tag: null });
     resetState();
   };
 

@@ -3,7 +3,7 @@ import { CSS } from '@dnd-kit/utilities';
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { Icon, Note } from '~/components';
-import { NoteActionType } from '~/components/Note/NoteRoot';
+import { NoteActionType } from '~/components/Note/NoteActions';
 import { setNote } from '~/reducer/note';
 import { NotesService } from '~/services';
 import { NoteType } from '~/types/note';
@@ -25,12 +25,14 @@ export function SortableItem({ item }: SortableItemProps) {
   const config = useMemo(
     () => [
       {
-        render: () => <Icon name='pin' />,
+        label: item.fixed ? 'Desafixar' : 'Fixar',
+        render: <Icon name='pin' />,
         align: 'left',
         onClick: () => update({ ...item, fixed: !item.fixed }),
       },
       {
-        render: () => <Icon name='remove' />,
+        label: 'Apagar',
+        render: <Icon name='remove' />,
         align: 'right',
         onClick: () => remove(item.id),
       },
@@ -56,8 +58,9 @@ export function SortableItem({ item }: SortableItemProps) {
       {...listeners}
     >
       <Note.Root actions={config as NoteActionType[]} onClick={handleSelect}>
-        <Note.Title title={item.title} />
-        <Note.Simple content={item.content} />
+        {item.title && <Note.Title title={item.title} />}
+        <Note.Content content={item.content} />
+        {item.tag ? <Note.Tag tag={item.tag} /> : <></>}
       </Note.Root>
     </ListItem>
   );

@@ -6,4 +6,20 @@ export const Layout = styled.div`
   padding: 20px 40px;
   box-sizing: border-box;
   background: ${({ theme }) => theme.background};
+
+  display: grid;
+  grid-gap: 24px;
+  grid-template-areas:
+    'filter'
+    'create'
+    'list';
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-gap: 32px;
+    grid-template-areas:
+      'filter create create create create'
+      'filter list list list list'
+      'filter list list list list';
+  }
 `;
