@@ -1,13 +1,18 @@
-import { Edit } from './Edit';
-import { List } from './List';
+import { useDispatch } from 'react-redux';
+import { Button } from '~/components';
+import { setNote } from '~/reducer/note';
+import { Form } from './Form';
 import { Wrapper } from './styles';
 
 export function Notes() {
+  const dispatch = useDispatch();
+
+  const handleOpen = () => dispatch(setNote());
+
   return (
     <Wrapper>
-      <List />
-
-      <Edit />
+      <Button label='Criar nota anotação' onClick={handleOpen} />
+      <Form />
     </Wrapper>
   );
 }

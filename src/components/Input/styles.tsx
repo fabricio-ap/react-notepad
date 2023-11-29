@@ -11,8 +11,8 @@ export const Wrapper = styled.div<WrapperType>`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 16px;
-  padding: 0 16px;
+  gap: 8px;
+  padding: 0 8px;
   border-radius: 8px;
   background: ${({ theme }) => theme.primary};
 `;

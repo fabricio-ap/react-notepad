@@ -2,16 +2,19 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { NoteType } from '~/types/note';
 
 export interface NoteState {
-  isOpenEdit: boolean;
+  isEditing: boolean;
+  isNew: boolean;
   note: NoteType;
 }
 
 const initialState: NoteState = {
-  isOpenEdit: false,
+  isEditing: false,
+  isNew: true,
   note: {
     id: '',
     title: '',
     content: '',
+    tag: null,
   },
 };
 
@@ -20,19 +23,22 @@ export const noteSlice = createSlice({
   initialState,
 
   reducers: {
-    setNote: (state, action: PayloadAction<NoteType>) => {
-      if (action.payload.id) {
-        state.isOpenEdit = true;
-        state.note = { ...action.payload };
-      }
+    setNote: (state, action: PayloadAction<NoteType | undefined>) => {
+      state.isEditing = true;
+      state.isNew = !action.payload;
+      state.note = action.payload || initialState.note;
     },
-    resetNote: (state, action: PayloadAction) => {
-      state.isOpenEdit = initialState.isOpenEdit;
+    setInitialState: (state, action: PayloadAction) => {
+      state.isEditing = false;
+      state.isNew = initialState.isNew;
       state.note = initialState.note;
+    },
+    setNoteContent: (state, action: PayloadAction<NoteType>) => {
+      state.note = action.payload;
     },
   },
 });
 
-export const { setNote, resetNote } = noteSlice.actions;
+export const { setNote, setInitialState, setNoteContent } = noteSlice.actions;
 
 export default noteSlice.reducer;

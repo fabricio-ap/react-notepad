@@ -50,3 +50,9 @@ export const NavItem = styled.li<NavItemProps>`
     padding: 16px;
   }
 `;
+
+export const NavLabel = styled.span`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+`;

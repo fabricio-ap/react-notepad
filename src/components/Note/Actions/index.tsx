@@ -1,12 +1,5 @@
-import { ReactNode } from 'react';
-import { Footer, FooterItem } from './styles';
-
-export type NoteActionType = {
-  label: string;
-  render?: ReactNode;
-  align?: 'right' | 'left';
-  onClick?: () => void;
-};
+import { NoteActionType } from '..';
+import { Footer, FooterItem } from '../styles';
 
 interface NoteActionsProps {
   config: NoteActionType[];

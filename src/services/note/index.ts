@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from 'react-query';
 import { NoteType, TagType } from '~/types/note';
-import { addNote, deleteNote, getNotes, updateNote } from './service';
+import { createNote, deleteNote, getNotes, updateNote } from './service';
 
 export class NotesService {
   private static instance: NotesService;
@@ -27,8 +27,8 @@ export class NotesService {
     return { ...query, refetch };
   }
 
-  public add() {
-    return useMutation(addNote, {
+  public create() {
+    return useMutation(createNote, {
       onSuccess: () => this.refetchNotes(),
     });
   }
@@ -45,7 +45,7 @@ export class NotesService {
     });
   }
 
-  private refetchNotes() {
+  public refetchNotes() {
     this.refetch();
   }
 }

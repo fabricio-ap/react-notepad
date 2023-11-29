@@ -58,11 +58,7 @@ export const Tag = styled.label`
   font-size: 11px;
   padding: 4px;
   border-radius: 8px;
-  border: 1px solid ${({ theme }) => theme.onPrimary};
-
-  &:hover {
-    background: ${({ theme }) => theme.hover};
-  }
+  border: 1px solid ${({ theme }) => theme.secondary};
 `;
 
 export const Footer = styled.footer`
@@ -77,11 +73,14 @@ export const Footer = styled.footer`
   justify-content: space-between;
   gap: 8px;
   padding: 0 16px;
-  opacity: 0;
-  transition: 150ms opacity ease-in;
 
-  &:hover {
-    opacity: 1;
+  @media screen and (min-width: 768px) {
+    opacity: 0;
+    transition: 150ms opacity ease-in;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 

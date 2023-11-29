@@ -1,8 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { Note } from '.';
+import { Note, NoteActionType } from '.';
 import { Icon } from '../Icon';
-import { NoteActionType } from './NoteActions';
 
 const config = [
   {

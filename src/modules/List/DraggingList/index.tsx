@@ -11,7 +11,7 @@ import {
 import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortable';
 import { useCallback, useEffect, useState } from 'react';
 import { NoteType } from '~/types/note';
-import { SortableItem } from '../SortableItem';
+import { SortableItem } from './SortableItem';
 import { List, Title, Wrapper } from './styles';
 
 interface DraggingList {

@@ -1,4 +1,4 @@
-import { Text } from './styles';
+import { Text } from '../styles';
 
 interface NoteSimpleProps {
   content: string;

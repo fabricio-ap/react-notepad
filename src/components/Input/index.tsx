@@ -21,7 +21,7 @@ export function Input({ type = 'text', icon, fullWidth, ...props }: InputProps) 
 
   return (
     <Wrapper $fullWidth={fullWidth} data-testid='input'>
-      {icon && <Icon name={icon} />}
+      {icon && <Icon name={icon} size='14px' />}
       {renderElement()}
     </Wrapper>
   );

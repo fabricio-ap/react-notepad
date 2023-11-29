@@ -11,15 +11,16 @@ export const Layout = styled.div`
   grid-gap: 24px;
   grid-template-areas:
     'filter'
-    'create'
+    'note'
     'list';
 
   @media screen and (min-width: 768px) {
     display: grid;
     grid-gap: 32px;
+    grid-template-columns: 1fr 4fr;
     grid-template-areas:
-      'filter create create create create'
-      'filter list list list list'
-      'filter list list list list';
+      'filter note note note'
+      'filter list list list'
+      'filter list list list';
   }
 `;

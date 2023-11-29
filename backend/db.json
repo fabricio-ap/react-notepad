@@ -5,7 +5,8 @@
       "content": "Ingredientes\n- 2 limões\n- 2 dedos de leite\n- 1 colher de sopa e 1/2 de açúcar\n- 1 litro de água gelada\n\nModo de Preparo\nDescascar os limões e tirar as sementes. Colocar no liquidificador junto com os outros ingredientes. Bater e em seguida coar. É uma delícia.",
       "tag": {
         "label": "Receitas",
-        "value": "receitas"
+        "value": "receitas",
+        "id": 1
       },
       "fixed": false,
       "id": "e188cbc3baf8a"
@@ -19,7 +20,10 @@
     {
       "title": "Nota para testar a adição de tags",
       "content": "Testar adicionar marcadores existentes",
-      "tag": null,
+      "tag": {
+        "label": "Importantes",
+        "value": "importantes"
+      },
       "fixed": true,
       "id": "8eb50a1b56b8e"
     }
@@ -27,11 +31,13 @@
   "tags": [
     {
       "label": "Receitas",
-      "value": "receitas"
+      "value": "receitas",
+      "id": 1
     },
     {
-      "label": "Importante",
-      "value": "importante"
+      "label": "Importantes",
+      "value": "importantes",
+      "id": 2
     }
   ]
 }

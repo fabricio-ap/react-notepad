@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { Layout } from '~/components';
 import { useActiveTheme } from '~/hooks/useActiveTheme';
-import { Create, Filter, Header, Notes } from '~/modules';
+import { Filter, Header, List, Notes } from '~/modules';
 import { store } from '~/store';
 import { GlobalStyle, ResetStyles, theme } from '~/theme';
 
@@ -31,8 +31,8 @@ function App() {
 
             <Layout>
               <Filter />
-              <Create />
               <Notes />
+              <List />
             </Layout>
           </Provider>
         </IconContext.Provider>

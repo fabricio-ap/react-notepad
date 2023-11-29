@@ -7,6 +7,7 @@ export type NoteType = {
 };
 
 export type TagType = {
+  id?: string | number;
   label: string;
   value: string;
 };

@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
-import { NoteActionType, NoteActions } from './NoteActions';
-import { Content, Wrapper } from './styles';
+import { NoteActionType } from '..';
+import { NoteActions } from '../Actions';
+import { Content, Wrapper } from '../styles';
 
 interface NoteRootProps {
   children: ReactNode;

@@ -1,4 +1,4 @@
-import { Header, Title } from './styles';
+import { Header, Title } from '../styles';
 
 interface NoteTitleProps {
   title: string;

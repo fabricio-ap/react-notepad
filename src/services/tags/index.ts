@@ -1,6 +1,6 @@
-import { useQuery } from 'react-query';
+import { useMutation, useQuery } from 'react-query';
 import { TagType } from '~/types/note';
-import { getTags } from './service';
+import { createTag, deleteTag, getTags } from './service';
 
 export class TagsService {
   private static instance: TagsService;
@@ -25,6 +25,18 @@ export class TagsService {
     this.refetch = refetch;
 
     return { ...query, refetch };
+  }
+
+  public create() {
+    return useMutation(createTag, {
+      onSuccess: () => this.refetchTags(),
+    });
+  }
+
+  public delete() {
+    return useMutation(deleteTag, {
+      onSuccess: () => this.refetchTags(),
+    });
   }
 
   private refetchTags() {
