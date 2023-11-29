@@ -11,7 +11,7 @@ export function Notes() {
 
   return (
     <Wrapper>
-      <Button label='Criar nota anotação' onClick={handleOpen} />
+      <Button label='Criar nota anotação' onClick={handleOpen} size='12px' />
       <Form />
     </Wrapper>
   );

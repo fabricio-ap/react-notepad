@@ -8,24 +8,15 @@
         "value": "receitas",
         "id": 1
       },
-      "fixed": false,
+      "fixed": true,
       "id": "e188cbc3baf8a"
     },
     {
       "title": "Minha primeira anotação",
       "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "tag": null,
+      "fixed": false,
       "id": "f6654e199172a"
-    },
-    {
-      "title": "Nota para testar a adição de tags",
-      "content": "Testar adicionar marcadores existentes",
-      "tag": {
-        "label": "Importantes",
-        "value": "importantes"
-      },
-      "fixed": true,
-      "id": "8eb50a1b56b8e"
     }
   ],
   "tags": [
@@ -33,11 +24,6 @@
       "label": "Receitas",
       "value": "receitas",
       "id": 1
-    },
-    {
-      "label": "Importantes",
-      "value": "importantes",
-      "id": 2
     }
   ]
 }

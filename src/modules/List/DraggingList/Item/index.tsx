@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { Icon, Note, NoteActionType, Tag } from '~/components';
+import { Icon, Note, NoteActionType, Tag, Tooltip } from '~/components';
 import { setNote } from '~/reducer/note';
 import { NotesService } from '~/services';
 import { NoteType } from '~/types/note';
@@ -18,13 +18,21 @@ export function Item({ note }: ItemProps) {
   const config = [
     {
       label: note.fixed ? 'Desafixar' : 'Fixar',
-      render: <Icon name='pin' />,
+      render: (
+        <Tooltip title='Fixar nota'>
+          <Icon name='pin' />
+        </Tooltip>
+      ),
       align: 'left',
       onClick: () => update({ ...note, fixed: !note.fixed }),
     },
     {
       label: 'Apagar',
-      render: <Icon name='remove' />,
+      render: (
+        <Tooltip title='Remover'>
+          <Icon name='remove' />
+        </Tooltip>
+      ),
       align: 'right',
       onClick: () => remove(note.id),
     },

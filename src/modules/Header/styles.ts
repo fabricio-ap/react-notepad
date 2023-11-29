@@ -32,6 +32,11 @@ export const Title = styled.h2`
   font-weight: 800;
   line-height: 22px;
   letter-spacing: 1px;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 `;
 
 export const Actions = styled(Logo)`

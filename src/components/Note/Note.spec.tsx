@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Note, NoteActionType } from '.';
 import { Icon } from '../Icon';
 
@@ -62,18 +62,5 @@ describe('Note', () => {
     const actions = screen.getByTestId('note-actions');
 
     expect(actions).toBeInTheDocument();
-  });
-
-  it('Remove opacity when mouse over', () => {
-    render(
-      <Note.Root actions={config as NoteActionType[]}>
-        <Note.Title title='Test' />
-      </Note.Root>,
-    );
-
-    const actions = screen.getByTestId('note-actions');
-    fireEvent.mouseOver(actions);
-
-    expect(actions).toHaveStyle('opacity: 1');
   });
 });

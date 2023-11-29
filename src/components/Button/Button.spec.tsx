@@ -1,10 +1,16 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '~/theme';
 import { Button } from '.';
 
 describe('Button', () => {
   it('Render button', () => {
-    render(<Button label='Button' />);
+    render(
+      <ThemeProvider theme={theme.light}>
+        <Button label='Button' />
+      </ThemeProvider>,
+    );
 
     const button = screen.getByRole('button');
 
@@ -12,7 +18,11 @@ describe('Button', () => {
   });
 
   it('Render button with a custom label', () => {
-    render(<Button label='Custom label' />);
+    render(
+      <ThemeProvider theme={theme.light}>
+        <Button label='Custom label' />
+      </ThemeProvider>,
+    );
 
     const button = screen.getByRole('button', {
       name: /Custom label/i,
