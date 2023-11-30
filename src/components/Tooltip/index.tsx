@@ -9,8 +9,15 @@ interface TooltipProps {
 
 export function Tooltip({ children, title }: TooltipProps) {
   const style = { color: DarkToken.text, fontSize: '12px' };
+
   return (
-    <AntTooltip title={title} color={DarkToken.primary} overlayInnerStyle={style} arrow={false}>
+    <AntTooltip
+      title={title}
+      color={DarkToken.primary}
+      overlayInnerStyle={style}
+      arrow={false}
+      data-testid='tooltip'
+    >
       <div>{children}</div>
     </AntTooltip>
   );
