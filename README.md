@@ -1,7 +1,5 @@
 # Notepad
 
-## Sumário:
-
 - [Sobre o projeto](#sobre-o-projeto)
 - [Demonstração](#Demonstração)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
