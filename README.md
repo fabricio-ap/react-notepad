@@ -3,7 +3,7 @@
 - [Sobre o projeto](#sobre-o-projeto)
 - [Demonstração](#Demonstração)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
-- [Executando o projeto](#executando-o-rojeto)
+- [Executando o projeto](#executando-o-projeto)
 - [Metodologias](#metodologias)
 - [Créditos](#créditos)
 - [Conheça meu trabalho](#conheça-meu-trabalho)
